@@ -29,23 +29,22 @@ You should see at least one issue related to an overly permissive security group
 
 You can also scan a Terraform plan in JSON format to see the planned changes:
 
-1. Initialize the Terraform working directory:
+1. Initialize the Terraform working directory:  
    
-
-    terraform init
+        terraform init a
 
 
 2. Create a binary plan file:
 
-    terraform plan -out=tfplan.binary
+        terraform plan -out=tfplan.binary
 
 3. Convert the plan to JSON:
 
-   terraform show -json tfplan.binary > tf-plan.json
+       terraform show -json tfplan.binary > tf-plan.json
 
 4. Scan the JSON plan with Snyk IaC:
 
-   snyk iac test tf-plan.json
+       snyk iac test tf-plan.json
 
 
 By analyzing the plan, Snyk IaC inspects the final planned state, including resources, modules, and variable values, before any changes are applied.
